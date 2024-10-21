@@ -47,6 +47,8 @@ export default {
             error: '',
             logo: logo,
             fecha: new Date().getFullYear(),
+            apiUrl: 'http://192.168.1.61:8000',
+            apiProdUrl: '',
         };
     },
     methods: {
@@ -54,7 +56,8 @@ export default {
 
             try {
                 const response = await axios.post(
-                    'http://192.168.1.61:8000/login', 
+                    // `${this.apiProdUrl}/login`,
+                    `${this.apiUrl}/login`,
                     {
                         email: this.email,
                         password: this.password

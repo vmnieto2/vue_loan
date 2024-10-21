@@ -81,6 +81,8 @@ export default {
             error: '',
             modalInstanceExito: null,
             modalInstancePregunta: null,
+            apiUrl: 'http://192.168.1.61:8000',
+            apiProdUrl: '',
         };
     },
     methods: {
@@ -95,7 +97,8 @@ export default {
                     this.$router.push('/');  // Redirigir a login si no hay token
                 }
                 const response = await axios.post(
-                    'http://192.168.1.61:8000/payment/create_payment', 
+                    // `${this.apiProdUrl}/payment/create_payment`,
+                    `${this.apiUrl}/payment/create_payment`,
                     {
                         loan_id: this.loan_id,
                         pay_amount: this.amount

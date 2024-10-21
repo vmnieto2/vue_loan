@@ -45,14 +45,17 @@ export default {
         return {
             clients: [],
             msg: '',
-            eye_icon: eye_icon
+            eye_icon: eye_icon,
+            apiUrl: 'http://192.168.1.61:8000',
+            apiProdUrl: '',
         };
     },
     methods: {
         async fetchClientes(token) {
             try {
                 const response = await axios.post(
-                    'http://192.168.1.61:8000/client/get_all_clients', {},
+                    // `${this.apiProdUrl}/client/get_all_clients`, {},
+                    `${this.apiUrl}/client/get_all_clients`, {},
                     {
                         headers: {
                             Accept: "application/json",
