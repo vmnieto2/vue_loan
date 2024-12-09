@@ -47,15 +47,15 @@ export default {
             msg: '',
             eye_icon: eye_icon,
             apiUrl: 'http://192.168.1.61:8000',
-            apiProdUrl: '',
+            apiProdUrl: 'https://industrial-odille-victor-nieto-c0b6bebb.koyeb.app',
         };
     },
     methods: {
         async fetchClientes(token) {
             try {
                 const response = await axios.post(
-                    // `${this.apiProdUrl}/client/get_all_clients`, {},
-                    `${this.apiUrl}/client/get_all_clients`, {},
+                    `${this.apiProdUrl}/client/get_all_clients`, {},
+                    // `${this.apiUrl}/client/get_all_clients`, {},
                     {
                         headers: {
                             Accept: "application/json",

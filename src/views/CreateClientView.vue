@@ -153,7 +153,7 @@ export default {
             msg: '',
             error: '',
             apiUrl: 'http://192.168.1.61:8000',
-            apiProdUrl: '',
+            apiProdUrl: 'https://industrial-odille-victor-nieto-c0b6bebb.koyeb.app',
         };
     },
     methods: {
@@ -164,8 +164,8 @@ export default {
                     this.$router.push('/');  // Redirigir a login si no hay token
                 }
                 const response = await axios.post(
-                    // `${this.apiProdUrl}/client/save_client`,
-                    `${this.apiUrl}/client/save_client`,
+                    `${this.apiProdUrl}/client/save_client`,
+                    // `${this.apiUrl}/client/save_client`,
                     {
                         type_document: this.client.type_document,
                         document: this.client.document,
@@ -198,8 +198,8 @@ export default {
         async cargarDatos(token) {
             try {
                 const response = await axios.post(
-                    // `${this.apiProdUrl}/params/get_type_document`, {},
-                    `${this.apiUrl}/params/get_type_document`, {},
+                    `${this.apiProdUrl}/params/get_type_document`, {},
+                    // `${this.apiUrl}/params/get_type_document`, {},
                     {
                         headers: {
                             Accept: "application/json",

@@ -250,7 +250,7 @@ export default {
         form_param_description: '',
         error: '',
         apiUrl: 'http://192.168.1.61:8000',
-        apiProdUrl: '',
+        apiProdUrl: 'https://industrial-odille-victor-nieto-c0b6bebb.koyeb.app',
     };
   },
   methods: {
@@ -268,8 +268,8 @@ export default {
     async fetchTypeDocument(token) {
         try {
             const response = await axios.post(
-                // `${this.apiProdUrl}/params/get_type_document`, {},
-                `${this.apiUrl}/params/get_type_document`, {},
+                `${this.apiProdUrl}/params/get_type_document`, {},
+                // `${this.apiUrl}/params/get_type_document`, {},
                 {
                     headers: {
                         Accept: "application/json",
@@ -288,8 +288,8 @@ export default {
     async fetchAnyList(token) {
         try {
             const response = await axios.post(
-                // `${this.apiProdUrl}/params/${this.type_list}`, {},
-                `${this.apiUrl}/params/${this.type_list}`, {},
+                `${this.apiProdUrl}/params/${this.type_list}`, {},
+                // `${this.apiUrl}/params/${this.type_list}`, {},
                 {
                     headers: {
                         Accept: "application/json",
@@ -309,8 +309,8 @@ export default {
         try {
             const token = localStorage.getItem('token');
             const response = await axios.post(
-                // `${this.apiProdUrl}/params/delete_param`, 
-                `${this.apiUrl}/params/delete_param`, 
+                `${this.apiProdUrl}/params/delete_param`, 
+                // `${this.apiUrl}/params/delete_param`, 
                 {
                     type_list: this.type_list,
                     param_id: this.param_id
@@ -338,8 +338,8 @@ export default {
             const token = localStorage.getItem('token');
           
             const result = await axios.post(
-                // `${this.apiProdUrl}/params/update_param`, 
-                `${this.apiUrl}/params/update_param`,  
+                `${this.apiProdUrl}/params/update_param`, 
+                // `${this.apiUrl}/params/update_param`,  
                 {
                     type_list: this.type_list,
                     param_id: this.selectedParam.id,
@@ -370,8 +370,8 @@ export default {
             const token = localStorage.getItem('token');
           
             const result = await axios.post(
-                // `${this.apiProdUrl}/params/update_param`, 
-                `${this.apiUrl}/params/update_param`, 
+                `${this.apiProdUrl}/params/update_param`, 
+                // `${this.apiUrl}/params/update_param`, 
                 {
                     type_list: this.type_list,
                     param_id: this.selectedParam.id,
@@ -401,8 +401,8 @@ export default {
             const token = localStorage.getItem('token');
           
             const result = await axios.post(
-                // `${this.apiProdUrl}/params/create_param`, 
-                `${this.apiUrl}/params/create_param`,  
+                `${this.apiProdUrl}/params/create_param`, 
+                // `${this.apiUrl}/params/create_param`,  
                 {
                     type_list: this.type_list,
                     param_name: this.form_param_name,
@@ -432,8 +432,8 @@ export default {
             const token = localStorage.getItem('token');
           
             const result = await axios.post(
-                // `${this.apiProdUrl}/params/create_param`, 
-                `${this.apiUrl}/params/create_param`, 
+                `${this.apiProdUrl}/params/create_param`, 
+                // `${this.apiUrl}/params/create_param`, 
                 {
                     type_list: this.type_list,
                     param_name: this.form_param_name,

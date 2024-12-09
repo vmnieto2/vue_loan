@@ -82,7 +82,7 @@ export default {
             modalInstanceExito: null,
             modalInstancePregunta: null,
             apiUrl: 'http://192.168.1.61:8000',
-            apiProdUrl: '',
+            apiProdUrl: 'https://industrial-odille-victor-nieto-c0b6bebb.koyeb.app',
         };
     },
     methods: {
@@ -97,8 +97,8 @@ export default {
                     this.$router.push('/');  // Redirigir a login si no hay token
                 }
                 const response = await axios.post(
-                    // `${this.apiProdUrl}/payment/create_payment`,
-                    `${this.apiUrl}/payment/create_payment`,
+                    `${this.apiProdUrl}/payment/create_payment`,
+                    // `${this.apiUrl}/payment/create_payment`,
                     {
                         loan_id: this.loan_id,
                         pay_amount: this.amount

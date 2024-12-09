@@ -87,15 +87,15 @@ export default {
       msg: '',
       owe: '',
       apiUrl: 'http://192.168.1.61:8000',
-      apiProdUrl: '',
+      apiProdUrl: 'https://industrial-odille-victor-nieto-c0b6bebb.koyeb.app',
     };
   },
   methods: {
     async showLoansByClient(token) {
       try {
         const response = await axios.post(
-            // `${this.apiProdUrl}/loan/show_loans_by_client`,
-            `${this.apiUrl}/loan/show_loans_by_client`,
+            `${this.apiProdUrl}/loan/show_loans_by_client`,
+            // `${this.apiUrl}/loan/show_loans_by_client`,
             {
                 client_id: this.client_id
             },

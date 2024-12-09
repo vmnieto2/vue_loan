@@ -48,7 +48,7 @@ export default {
             logo: logo,
             fecha: new Date().getFullYear(),
             apiUrl: 'http://192.168.1.61:8000',
-            apiProdUrl: '',
+            apiProdUrl: 'https://industrial-odille-victor-nieto-c0b6bebb.koyeb.app',
         };
     },
     methods: {
@@ -56,8 +56,8 @@ export default {
 
             try {
                 const response = await axios.post(
-                    // `${this.apiProdUrl}/login`,
-                    `${this.apiUrl}/login`,
+                    `${this.apiProdUrl}/login`,
+                    // `${this.apiUrl}/login`,
                     {
                         email: this.email,
                         password: this.password
